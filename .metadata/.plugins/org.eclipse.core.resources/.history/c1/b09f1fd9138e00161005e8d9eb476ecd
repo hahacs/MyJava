@@ -1,0 +1,18 @@
+package com.hahacs.util.test;
+
+import java.io.File;
+
+public class test01 {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		String filePath = "D:\\variety001\\80155\\123.txt";
+		File file = new File(filePath);
+		
+		System.out.println(file.getName());
+	}
+
+}

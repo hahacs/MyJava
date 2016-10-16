@@ -1,0 +1,86 @@
+package com.hahacs.integration;
+
+import java.io.File;
+
+import com.hahacs.util.zip.MyZip4j;
+import com.hahacs.util.zip.MyZipCompressing;
+
+public class PreCompress {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+
+		String fileName = "80155";
+		
+		String password = "liyys";
+		
+		String file_root_directory = "D:\\";
+		String file_current_directory = "variety001\\";	
+		String file_zip_directory = "temp_upload\\";
+		
+		
+		String file_original_path = file_root_directory+file_current_directory;
+		String file_zip_pathString = file_root_directory+file_zip_directory;
+		
+		
+		
+//		String oldPath = "D:\\variety001\\80155";
+//		String newPath ="D:\\temp_upload\\80155.zip";
+		
+		String oldFilePath = file_original_path + fileName;
+		String newFilePath =file_zip_pathString+fileName+".zip";
+		
+		doCompress(fileName, password, oldFilePath, newFilePath);
+		
+//		doCompressSimple(newPath,oldPath);
+		
+	}
+
+
+	/**
+	 * @Title: doCompress
+	 * @Description: 加密码的单个文件压缩
+	 * @param fileName
+	 * @param password
+	 * @param oldFilePath
+	 * @param newFilePath    
+	 * @return void 
+	 * @author wuhaopeng
+	 * @date 2016-10-9 下午11:05:22
+	 */
+	private static void doCompress(String fileName, String password,
+			String oldFilePath, String newFilePath) {
+		MyZip4j myZip = new MyZip4j();
+		
+//		oldFilePath = "D:\\variety001\\80155";
+//		newFilePath = "D:\\temp_upload\\80155.zip";
+		
+		myZip.doZip(oldFilePath, newFilePath, fileName, password);
+	}
+	
+	
+	/**
+	 * 
+	 * @Title: doCompress
+	 * @Description: 不用密码的压缩文件
+	 * @param newPath
+	 * @param oldPath    
+	 * @return void 
+	 * @author wuhaopeng
+	 * @date 2016-10-9 下午10:49:25
+	 */
+	public static void doCompressSimple (String newPath,String oldPath){
+		MyZipCompressing book = new MyZipCompressing();  
+	      try {  
+	          book.zip(newPath,  
+	                  new File(oldPath));  
+	      } catch (Exception e) {    
+	          e.printStackTrace();  
+	      }  
+	}
+	
+
+
+}

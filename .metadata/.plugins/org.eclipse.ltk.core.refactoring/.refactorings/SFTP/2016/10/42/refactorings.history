@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy 2 elements to &apos;baseTools-util/src/com.hahacs.util.zip&apos;&#x0D;&#x0A;- Original project: &apos;SFTP&apos;&#x0D;&#x0A;- Destination element: &apos;baseTools-util/src/com.hahacs.util.zip&apos;&#x0D;&#x0A;- Original elements:&#x0D;&#x0A;     com.hahacs.zip.MyZipCompressing.java&#x0D;&#x0A;     com.hahacs.zip.CopyOfMyzipDecompressing.java" description="Copy compilation units" destination="=baseTools-util/src&lt;com.hahacs.util.zip" element1="/src&lt;com.hahacs.zip{MyZipCompressing.java" element2="/src&lt;com.hahacs.zip{CopyOfMyzipDecompressing.java" files="0" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1476000927602" units="2" version="1.0"/>
+</session>

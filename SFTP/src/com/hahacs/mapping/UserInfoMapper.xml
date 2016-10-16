@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.hahacs.mapping.UserInfoMapper" >
+
+	<!-- 取出本周新增注册用户数（剔除借款人） -->
+	<select id="findWeekNewRegister" resultType="java.lang.String" >
+		select count(*) count from tab_user_info t 
+			where t.loan_flag != '1'
+          and t.create_time >= date_sub(curdate(),interval 7 day)
+          <![CDATA[
+			and t.create_time < curdate()
+			]]>
+					
+	</select>
+	
+	<!-- 取出本周新增投资用户总数 -->
+	<select id="findWeekNewInvestor" resultType="java.lang.String">
+		select count(0) from (
+			select a.pla_cust_id userid,MIN(a.create_time) firsttime from tab_project_investment a 
+									where a.`status` = '8' 
+									GROUP BY a.pla_cust_id 
+               )b
+						where b.userid not in (select  c.userid from tab_import_user_income c)
+							and b.firsttime >= date_sub(curdate(),interval 7 day)
+							<![CDATA[
+							and b.firsttime < curdate()
+							]]>
+	</select>
+	
+	<!-- 取出总注册用户数 -->
+	<select id="findAllUserTotal" resultType="java.lang.String">
+		select count(*)+15 count from tab_user_info t 
+		<![CDATA[
+			where t.create_time < CURDATE()
+			]]>
+	</select>
+  
+    <!-- 取出总投资用户数 -->
+  	<select id="findAllInvestorTotal" resultType="java.lang.String">
+  		select COUNT(b.userid)+5407 amout  from (
+select a.pla_cust_id userid,MIN(a.create_time) firsttime from tab_project_investment a 
+									where a.`status` = '8' 
+									GROUP BY a.pla_cust_id 
+               )b
+						where b.userid not in (select  c.userid from tab_import_user_income c)
+  	</select>
+  
+  <!-- 实名数 -->
+  	<select id="findWeekRealName" resultType="java.lang.String">
+  		select count(*) count from tab_user_info t 
+
+			where t.pla_cust_id in (
+select b.pla_cust_id from tab_user_info b 
+
+			where b.loan_flag != '1'
+          and b.create_time >=date_sub(curdate(),interval 7 day)
+          <![CDATA[
+					and b.create_time < curdate()
+			]]>
+)     and t.real_name_flag = '1'
+  	</select>
+  		
+  		<!-- 绑卡数 -->
+  <select id="findWeekBankCard" resultType="java.lang.String">
+  	select count(*) count from tab_user_info t 
+
+			where t.pla_cust_id in (
+select b.pla_cust_id from tab_user_info b 
+
+			where b.loan_flag != '1'
+          and b.create_time >= date_sub(curdate(),interval 7 day)
+          <![CDATA[
+					and b.create_time < curdate()
+					]]>
+
+)     and t.bind_card_flag = '1'
+  </select>
+  
+  <select id="findWeekInvestor" resultType="java.lang.String">
+  	select count(distinct t.pla_cust_id) from tab_project_investment t 
+
+		where  t.status = '8' 
+      and  t.pla_cust_id in (
+			select t.pla_cust_id count from tab_user_info t 
+
+			where t.loan_flag != '1'
+          and t.create_time >= date_sub(curdate(),interval 7 day)
+          <![CDATA[
+					and t.create_time < curdate()
+					]]>
+)
+  </select>
+  
+  <!-- 新增投资人投资总数 -->
+  <select id="findNewInvestAmount" resultType="java.lang.String" >
+  	select sum(k.amout)/100 from (
+select SUM(t.trans_amt) amout,t.pla_cust_id from tab_project_investment t 
+				where t.`status` = '8'
+					and t.pla_cust_id in(
+select b.userid from (
+select a.pla_cust_id userid,MIN(a.create_time) firsttime from tab_project_investment a 
+									where a.`status` = '8' 
+									GROUP BY a.pla_cust_id 
+               )b
+						where b.userid not in (select  c.userid from tab_import_user_income c)
+							and b.firsttime >= date_sub(curdate(),interval 7 day)
+							<![CDATA[
+							and b.firsttime < curdate()
+							]]>
+)
+					GROUP BY t.pla_cust_id
+)k 
+  </select>
+</mapper>

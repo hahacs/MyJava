@@ -1,0 +1,39 @@
+package com.hahacs.util.test;
+
+import java.io.File;
+import java.lang.reflect.Field;
+import java.util.jar.Attributes.Name;
+
+import javax.xml.transform.Templates;
+
+public class test01 {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		String filePath = "D:\\variety001";
+		File file = new File(filePath);
+		
+		
+		File[] files = file.listFiles();
+		
+		System.out.println(files.length);
+		
+		for(File file1:files){
+			System.out.println(file1.getName());
+			
+		}
+//		System.out.println(file.getName());
+	}
+	
+
+	public void kk (File file){
+		
+		String path_way = "D:\\variety001";
+		System.out.println(); 
+		
+	}
+
+}

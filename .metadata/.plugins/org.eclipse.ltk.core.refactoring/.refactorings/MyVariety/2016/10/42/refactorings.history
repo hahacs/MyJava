@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Extract method &apos;private static void doCompress(String fileName, String password, String oldFilePath, String newFilePath)&apos; from &apos;com.hahacs.integration.PreCompress.main()&apos; to &apos;com.hahacs.integration.PreCompress&apos;&#x0D;&#x0A;- Original project: &apos;MyVariety&apos;&#x0D;&#x0A;- Method name: &apos;doCompress&apos;&#x0D;&#x0A;- Destination type: &apos;com.hahacs.integration.PreCompress&apos;&#x0D;&#x0A;- Declared visibility: &apos;private&apos;" comments="false" description="Extract method &apos;doCompress&apos;" destination="0" exceptions="false" flags="786434" id="org.eclipse.jdt.ui.extract.method" input="/src&lt;com.hahacs.integration{PreCompress.java" name="doCompress" replace="false" selection="844 195" stamp="1476025510227" version="1.0" visibility="2"/>
+</session>

@@ -1,0 +1,25 @@
+package com.hahacs.util.test;
+
+import java.io.File;
+import java.io.IOException;
+
+import de.idyl.winzipaes.AesZipFileEncrypter;
+import de.idyl.winzipaes.impl.AESEncrypterBC;
+
+public class test02 {
+
+	/**
+	 * @param args
+	 * @throws IOException 
+	 */
+	public static void main(String[] args) throws IOException {
+		// TODO Auto-generated method stub
+		AESEncrypterBC bc = new AESEncrypterBC();
+		AesZipFileEncrypter azfe = new AesZipFileEncrypter(
+			new File("要生成的zip包名.zip"), bc);
+		azfe.setEncoding("UTF-8");  // 编码格式是在这传进去的
+		azfe.add(new File("要往zip包里添加的文件路径"), "zip包里显示的文件名字", "密码");
+		azfe.close();
+	}
+
+}

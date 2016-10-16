@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+<fullyQualifiedTypeName name="java.util.Calendar"/>
+<fullyQualifiedTypeName name="java.text.SimpleDateFormat"/>
+<fullyQualifiedTypeName name="com.hahacs.sftp.MySFTP"/>
+<fullyQualifiedTypeName name="com.hahacs.zip.CopyOfMyzipDecompressing"/>
+<fullyQualifiedTypeName name="com.hahacs.excel.ExcelEntity"/>
+<fullyQualifiedTypeName name="com.hahacs.csv.SimpleCSVUtils"/>
+<fullyQualifiedTypeName name="java.util.ArrayList"/>
+<fullyQualifiedTypeName name="com.csvreader.CsvReader"/>
+<fullyQualifiedTypeName name="java.nio.charset.Charset"/>
+<fullyQualifiedTypeName name="java.math.BigDecimal"/>
+<fullyQualifiedTypeName name="com.hahacs.csv.MyJavaCsv"/>
+<fullyQualifiedTypeName name="com.hahacs.vo.TwoNumber"/>
+<fullyQualifiedTypeName name="com.hahacs.util.MathUtils"/>
+<fullyQualifiedTypeName name="com.hahacs.jdbc.MySqlCreate"/>
+<fullyQualifiedTypeName name="com.hahacs.jdbc.MySqlExec"/>
+<fullyQualifiedTypeName name="java.io.Reader"/>
+<fullyQualifiedTypeName name="javax.annotation.Resources"/>
+<fullyQualifiedTypeName name="java.io.InputStream"/>
+<fullyQualifiedTypeName name="org.apache.ibatis.session.SqlSessionFactory"/>
+<fullyQualifiedTypeName name="org.apache.ibatis.session.SqlSession"/>
+<fullyQualifiedTypeName name="org.apache.ibatis.session.SqlSessionFactoryBuilder"/>
+<fullyQualifiedTypeName name="java.io.File"/>
+<fullyQualifiedTypeName name="java.util.jar.Attributes.Name"/>
+<fullyQualifiedTypeName name="javax.xml.transform.Templates"/>
+<fullyQualifiedTypeName name="java.lang.reflect.Field"/>
+<fullyQualifiedTypeName name="de.idyl.winzipaes.impl.AESEncrypterBC"/>
+<fullyQualifiedTypeName name="com.hahacs.util.zip.MyZip4j"/>
+<fullyQualifiedTypeName name="java.lang.String"/>
+<fullyQualifiedTypeName name="java.awt.TextArea"/>
+</qualifiedTypeNameHistroy>

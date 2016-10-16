@@ -1,0 +1,83 @@
+package com.hahacs.dojobvisible;
+
+import java.awt.BorderLayout;
+import java.awt.EventQueue;
+import java.awt.TextArea;
+
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.border.EmptyBorder;
+import javax.swing.JButton;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+import java.awt.Color;
+import java.awt.Window.Type;
+import javax.swing.JLabel;
+import javax.swing.ImageIcon;
+import java.awt.Font;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+import javax.swing.JTextField;
+import javax.swing.JTextArea;
+import javax.swing.JScrollBar;
+import javax.swing.JScrollPane;
+
+public class MainWindow extends JFrame {
+
+	private JPanel contentPane;
+	private JTextField txtThisIsTest;
+	private JTextArea txtrSdfsdfsdfsdfsdfsdfsdf;
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					MainWindow frame = new MainWindow();
+					frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the frame.
+	 */
+	public MainWindow() {
+		setTitle("\u7EFC\u827A\u6574\u7406\u6536\u96C6\u7CFB\u7EDF");
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setBounds(100, 100, 746, 554);
+		contentPane = new JPanel();
+		contentPane.setBackground(Color.DARK_GRAY);
+		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+		contentPane.setLayout(new BorderLayout(0, 0));
+		setContentPane(contentPane);
+		
+		JButton button = new JButton("\u6267\u884C");
+		button.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				System.out.println("hahacs");
+				textArea.setText("123");
+				
+			}
+		});
+		contentPane.add(button, BorderLayout.SOUTH);
+		
+		txtThisIsTest = new JTextField();
+		txtThisIsTest.setText("this is test");
+		contentPane.add(txtThisIsTest, BorderLayout.NORTH);
+		txtThisIsTest.setColumns(10);
+		
+		JScrollPane scrollPane = new JScrollPane();
+		contentPane.add(scrollPane, BorderLayout.CENTER);
+		
+		txtrSdfsdfsdfsdfsdfsdfsdf = new JTextArea();
+		txtrSdfsdfsdfsdfsdfsdfsdf.setText("sdfsdfsdfsdfsdfsdfsdf");
+		scrollPane.setViewportView(txtrSdfsdfsdfsdfsdfsdfsdf);
+	}
+
+}
