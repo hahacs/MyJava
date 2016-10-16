@@ -3,13 +3,15 @@ package com.hahacs.util.file;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.util.ArrayList;
 
 public class ReadAllFileName {
 
 	/**
 	 * @param args
+	 * @throws Exception 
 	 */
-	public static void main(String[] args) {
+	public static void main(String[] args) throws Exception {
 		System.out.println("ke");
 		try {
             readfile("F:\\001可乐云项目\\缓存区文本");
@@ -22,7 +24,9 @@ public class ReadAllFileName {
 
 	}
 
-	 public static boolean readfile(String filepath) throws FileNotFoundException, IOException {
+	 public static String[] readfile(String filepath) throws Exception {
+//		 ArrayList<String>  strArray = new ArrayList<String> (); 
+		 String[] filelist = new String[]{};
          try {
 
                  File file = new File(filepath);
@@ -34,7 +38,8 @@ public class ReadAllFileName {
 
                  } else if (file.isDirectory()) {
                          System.out.println("文件夹");
-                         String[] filelist = file.list();
+                         filelist = file.list();
+                         
                          for (int i = 0; i < filelist.length; i++) {
                                  File readfile = new File(filepath + "\\" + filelist[i]);
                                  if (!readfile.isDirectory()) {
@@ -47,13 +52,15 @@ public class ReadAllFileName {
                                          readfile(filepath + "\\" + filelist[i]);
                                  }
                          }
+                         
+                         return filelist;
 
                  }
 
          } catch (FileNotFoundException e) {
                  System.out.println("readfile()   Exception:" + e.getMessage());
          }
-         return true;
+         return filelist ;
  }
 
  /**
