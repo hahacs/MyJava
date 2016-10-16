@@ -23,6 +23,7 @@ public class test01 {
 		
 		for(File file1:files){
 			System.out.println(file1.getName());
+			System.out.println("hahacs");
 			
 		}
 //		System.out.println(file.getName());
